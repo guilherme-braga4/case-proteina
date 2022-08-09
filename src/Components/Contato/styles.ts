@@ -1,7 +1,23 @@
 import styled from 'styled-components'
-import { AiFillDelete } from 'react-icons/ai'
+import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 
-export const IconeApagar = styled(AiFillDelete)`
+ 
+export const IconeDarLike = styled(AiOutlineHeart)`
+  color: #273443;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+
+  &:hover {
+    transition: 0.3s;
+    transform: rotate(360deg);
+    color: #c70039;
+    height: 40px;
+    width: 40px;
+  }
+`
+
+export const IconeLike = styled(AiFillHeart)`
   color: #273443;
   height: 30px;
   width: 30px;

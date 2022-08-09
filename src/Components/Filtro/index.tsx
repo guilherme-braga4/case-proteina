@@ -10,9 +10,8 @@ const Filtro = ({ repos, setRepos }: FiltroProps) => {
   useEffect(() => {
     const fetchRepos = async () => {
       try {
-        const obterContatos = await Req.getRepos(filtro)
-        console.log('obterContatos', obterContatos)
-        setRepos(obterContatos)
+        const getRepos = await Req.getRepos(filtro)
+        setRepos(getRepos)
       } catch {
         console.log('Erro ao carregar os repositórios')
       }
@@ -44,7 +43,7 @@ const Filtro = ({ repos, setRepos }: FiltroProps) => {
     <Container>
       <Input
         name="contato"
-        placeholder="Pesquise pelo nome de um user do Github..."
+        placeholder="Pesquise pelo nome de um usuário do Github..."
         type="text"
         onChange={filterByName}
       />
