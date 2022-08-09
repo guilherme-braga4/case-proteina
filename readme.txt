@@ -1,7 +1,7 @@
-# GERENCIADOR DE REPOSOSITÓRIOS DO GITHUB:
+GERENCIADOR DE REPOSOSITÓRIOS DO GITHUB:
 Por: Guilherme Braga
 
-# Como Rodar Localmente:
+Como Rodar Localmente:
 Execute o comando git clone https://github.com/guilherme-braga4/case-proteina.git [Utilize a branch master]
 
 Instalando Dependências - npm install ou yarn install
