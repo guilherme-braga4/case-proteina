@@ -1,12 +1,14 @@
 # GERENCIADOR DE REPOSOSITÓRIOS DO GITHUB:
 Por: Guilherme Braga
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/90586912/183543223-b063ca86-be74-4015-9290-fb2bb047b721.gif)
+![ezgif com-gif-maker(1)](https://user-images.githubusercontent.com/90586912/183705884-0e0d9290-1bd3-415f-a451-b741ded38634.gif)
 
 ## Tecnologias:
 Styled Components
 Typescript
 React
+Axios (Requisições HTTP)
+API: https://docs.github.com/pt/rest/repos
 
 ## Como Rodar Localmente:
 Execute o comando git clone https://github.com/guilherme-braga4/case-proteina.git [Utilize a branch master]
