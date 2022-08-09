@@ -4,14 +4,14 @@ import Filtro from '../Filtro/index'
 import { HeaderProps } from './interface'
 
 const Header = ({setRepos, repos}: HeaderProps) => {
-  const [newUser, setNewUser] = useState(false)
+  const [filterByLike, setFilterByLike] = useState(true)
 
   return (
       <Container>
         <Form>
           <Filtro
-            setNewUser={setNewUser}
-            newUser={newUser}
+            setFilterByLike={setFilterByLike}
+            filterByLike={filterByLike}
             setRepos={setRepos} 
             repos={repos}
           />

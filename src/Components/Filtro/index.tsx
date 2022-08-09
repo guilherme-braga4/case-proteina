@@ -1,10 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { FiltroProps } from './interface'
 import { Container } from './styles'
+import { IconeDarLike, IconeLike } from '../Contato/styles'
 import Input from '../Input/index'
 import { Req } from '../../Services/index'
+import Botao from '../Botao/index'
 
-const Filtro = ({ repos, setRepos }: FiltroProps) => {
+const Filtro = ({
+  repos,
+  setRepos,
+  filterByLike,
+  setFilterByLike
+}: FiltroProps) => {
   const [filtro, setFiltro] = useState<string>('')
 
   useEffect(() => {
@@ -23,7 +30,7 @@ const Filtro = ({ repos, setRepos }: FiltroProps) => {
   useEffect(() => {
     const pesquisa =
       filtro !== undefined
-        ? repos?.filter((repo: any ) =>
+        ? repos?.filter((repo: any) =>
             repo.owner.login.toLowerCase().includes(filtro.toLowerCase())
           )
         : repos
@@ -39,6 +46,23 @@ const Filtro = ({ repos, setRepos }: FiltroProps) => {
     setFiltro(value)
   }
 
+  const filterLikeRepos = () => {
+    setFilterByLike(!filterByLike)
+    console.log('filterByLike', filterByLike)
+
+    
+    if (filterByLike == true) {
+      const filteredReposByLike = repos?.filter((repo: any) => {
+        return repo.curtida && repo.curtida === true
+      })
+      setRepos(filteredReposByLike)
+    } else {
+      console.log('else')
+      const dataRepos = JSON.parse(localStorage.getItem('repos') || '[]')
+      setRepos(dataRepos)
+    }
+  }
+
   return (
     <Container>
       <Input
@@ -47,6 +71,21 @@ const Filtro = ({ repos, setRepos }: FiltroProps) => {
         type="text"
         onChange={filterByName}
       />
+      {filterByLike ? (
+        <Botao
+          type="submit"
+          icon={<IconeDarLike />}
+          disabled={false}
+          onClick={() => filterLikeRepos()}
+        />
+      ) : (
+        <Botao
+          type="submit"
+          icon={<IconeLike />}
+          disabled={false}
+          onClick={() => filterLikeRepos()}
+        />
+      )}
     </Container>
   )
 }
