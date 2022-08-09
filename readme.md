@@ -1,6 +1,8 @@
 # GERENCIADOR DE REPOSOSITÓRIOS DO GITHUB:
 Por: Guilherme Braga
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/90586912/183543223-b063ca86-be74-4015-9290-fb2bb047b721.gif)
+
 ## Tecnologias:
 Styled Components
 Typescript
